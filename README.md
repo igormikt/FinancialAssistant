@@ -32,34 +32,42 @@ FinancialAssistant/
 
 │
 ├── main.py                # Основная логика Telegram-бота
+
 ├── config.py              # Загрузка переменных окружения
+
 ├── check_secrets.py       # Проверка обязательных переменных окружения
+
 ├── requirements.txt       # Зависимости проекта
+
 ├── user.db                # SQLite база данных (создаётся автоматически)
+
 └── README.md              # Документация проекта
 
 ⚙️ Установка и запуск
-1. Клонирование репозитория
-bash
-git clone https://github.com/igormikt/FinancialAssistant.git
-cd FinancialAssistant
-2. Установка зависимостей
-bash
+Установка зависимостей
+
 pip install -r requirements.txt
-3. Настройка переменных окружения
+
+Настройка переменных окружения
+   
 Создай файл .env:
 
 Код
+
 BOT_TOKEN=твой_токен_бота
+
 EXCHANGE_RATE_API_URL=https://v6.exchangerate-api.com/v6
+
 EXCHANGE_RATE_API_KEY=ключ_от_API
+
 Проверка переменных:
 
-bash
 python check_secrets.py
-4. Запуск бота
-bash
+
+Запуск бота
+
 python main.py
+
 📡 Команды и функциональность
 🟦 /start
 Отправляет приветствие и показывает меню:
@@ -93,18 +101,17 @@ python main.py
 Покупайте товары по скидкам
 
 🧾 Учёт личных расходов (FSM)
+
 Пользователь вводит:
+
 Категория 1 → сумма
+
 Категория 2 → сумма
+
 Категория 3 → сумма
 
 После ввода всех данных бот сохраняет их в SQLite:
-Код
-category1, expenses1
-category2, expenses2
-category3, expenses3
-🗄️ Структура таблицы users
-sql
+
 CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY,
     telegram_id INTEGER UNIQUE,
@@ -117,19 +124,27 @@ CREATE TABLE IF NOT EXISTS users (
     expenses3 REAL
 );
 🔐 Работа с конфигурацией
+
 config.py
+
 Загружает переменные окружения через python-dotenv:
 
-python
 BOT_TOKEN = os.getenv('BOT_TOKEN')
+
 EXCHANGE_RATE_API_URL = os.getenv('EXCHANGE_RATE_API_URL')
+
 EXCHANGE_RATE_API_KEY = os.getenv('EXCHANGE_RATE_API_KEY')
+
 check_secrets.py
+
 Проверяет наличие всех обязательных переменных.
 
 📦 Зависимости (requirements.txt)
+
 aiogram==3.17.0
+
 aiohttp==3.9.5
+
 python-dotenv==1.0.1
 
 
