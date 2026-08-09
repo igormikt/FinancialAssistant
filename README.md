@@ -102,15 +102,5 @@ python-dotenv==1.0.1
 </pre>
 
 <hr>
-
-<h2 style="font-size:32px;">📈 Roadmap</h2>
-<ul style="font-size:20px;">
-  <li>Добавить графики расходов</li>
-  <li>Добавить экспорт данных в Excel</li>
-  <li>Добавить рекомендации по расходам</li>
-  <li>Добавить Telegram WebApp</li>
-  <li>Добавить категории по умолчанию</li>
-</ul>
-
 <hr>
 
